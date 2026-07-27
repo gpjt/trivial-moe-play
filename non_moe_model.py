@@ -7,8 +7,8 @@ class NonMoEModel(nn.Module):
     def __init__(self):
         super().__init__()
         self.layer_1 = nn.Linear(2, 4)
-        self.layer_2 = nn.Linear(4, 4)
-        self.layer_3 = nn.Linear(4, 1)
+        self.layer_2 = nn.Linear(4, 2)
+        self.layer_3 = nn.Linear(2, 1)
 
 
     def forward(self, xs):

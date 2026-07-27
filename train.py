@@ -64,6 +64,8 @@ def train(model, dataloader):
     end = time.time()
 
     print(f"Trained in {end - start:.1f}s, final loss {avg_loss:.2f}")
+    print(f"Last results: {results}")
+    print(f"Last targets: {ys}")
 
 
 def main():
