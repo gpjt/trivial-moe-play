@@ -31,7 +31,7 @@ class MyDataset(Dataset):
 
 
 BATCH_SIZE = 64
-EPOCHS = 3000
+EPOCHS = 30000
 LR = 1e-2
 WEIGHT_DECAY = 0
 
@@ -60,12 +60,24 @@ def train(model, dataloader):
 
             optimizer.step()
         avg_loss = sum(losses) / len(losses)
-        print(f"Epoch {epoch + 1}: loss is {avg_loss:.2f}")
+        print(f"Epoch {epoch + 1}: avg loss is {avg_loss:.2f}, max={max(losses):.2f}")
     end = time.time()
 
     print(f"Trained in {end - start:.1f}s, final loss {avg_loss:.2f}")
     print(f"Last results: {results}")
     print(f"Last targets: {ys}")
+
+    print("Parameters")
+    print("Layer 1:")
+    print(model.layer_1.weight)
+    print(model.layer_1.bias)
+    print("Layer 2:")
+    print(model.layer_2.weight)
+    print(model.layer_2.bias)
+    print("Layer 3:")
+    print(model.layer_3.weight)
+    print(model.layer_3.bias)
+
 
 
 def main():
