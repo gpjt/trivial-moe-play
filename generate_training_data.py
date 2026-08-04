@@ -3,8 +3,8 @@ import csv
 def main():
     with open("data.csv", "w", newline="") as csv_file:
         csv_writer = csv.writer(csv_file)
-        for ii in range(60):
-            for jj in range(60):
+        for ii in range(16):
+            for jj in range(16):
                 if ii + jj > 15:
                     result = ii + 2 * jj
                 else:
